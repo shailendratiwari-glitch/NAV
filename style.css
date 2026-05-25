@@ -40,10 +40,15 @@ body {
     justify-content: center;
 }
 
+.logo svg {
+    width: 100%;
+    height: 100%;
+}
+
 /* 4. Fix the navigation capsule link spacer */
 .nav-spacer {
     display: flex;
-    /* Removed the hardcoded width: 960px to let flexbox scale naturally */
+    width: 960px;
     height: 60px;
     padding: 0 40px; 
     justify-content: center;
@@ -57,6 +62,8 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
+    width: 759px;
+    height: 18px;        
     gap: 60px;
     list-style: none; /* REMOVES BULLET POINTS */
 }
@@ -78,6 +85,7 @@ body {
     color: #0078F8;
 }
 .nav-button {display: flex;
+    width: 214px;
 height: 70px;
 padding: 23px 24px;
 flex-direction: column;
