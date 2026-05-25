@@ -1,0 +1,100 @@
+/* 1. Reset browser defaults and ensure proper box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    background-color: #f5f5f5; /* Temporary background to see your white navbar */
+}
+
+/* 2. Make the container responsive instead of forcing 1920px */
+.nav-container {
+    display: flex;
+    width: 100%; /* Spans full width of any screen */
+    max-width: 1920px; /* Limits the max size to match Figma */
+    margin: 0 auto; /* Centers the whole header if screen is ultra-wide */
+    padding: 40px 0; /* Adjusted padding for better vertical balance */
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+}
+
+/* 3. Handle structural inner layout */
+.navbar-content {
+    display: flex;
+    width: 100%;
+    padding: 0 120px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 4. Fix the navigation capsule link spacer */
+.nav-spacer {
+    display: flex;
+    /* Removed the hardcoded width: 960px to let flexbox scale naturally */
+    height: 60px;
+    padding: 0 40px; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: 0.5px solid rgba(28, 26, 26, 0.40);
+    background: transparent;
+}
+
+/* 5. Style the list and clear default bullet points */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    list-style: none; /* REMOVES BULLET POINTS */
+}
+
+/* 6. Style the actual clickable text links */
+.nav-links a {
+    color: #1C1A1A;
+    text-align: center;
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none; /* REMOVES UNDERLINES */
+    text-transform: capitalize;
+    transition: color 0.2s ease;
+}
+
+/* Quick hover state to make it dynamic */
+.nav-links a:hover {
+    color: #0078F8;
+}
+.nav-button {display: flex;
+height: 70px;
+padding: 23px 24px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 150px;
+border: 1px solid rgba(0, 120, 248, 0.40);
+background: var(--background, rgba(255, 255, 255, 0.10));
+box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.17);
+color: #000;
+text-align: center;
+font-family: "Google Sans Flex";
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: capitalize;
+align-self: stretch;
+}
