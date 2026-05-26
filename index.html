@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Navigation Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body><div class="container">    
+<body>
+
+<div class="container">    
     <nav class="nav-container">
         <div class="navbar-content">
             <div class="logo">
@@ -37,7 +39,8 @@
                 </svg>
             </div>
             
-            <div class="nav-spacer">
+            <div class="nav-spacer" id="navSidebar">
+                <button class="close-menu" id="closeBtn" aria-label="Close menu">&times;</button>
                 <ul class="nav-links"> 
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Our Hospital</a></li>
@@ -45,13 +48,41 @@
                     <li><a href="#">Specialists</a></li>
                     <li><a href="#">Smile Gallery</a></li>
                     <li><a href="#">Technology</a></li>
-                
                 </ul>
+                <button class="nav-button sidebar-btn">Book Appointment</button>
             </div>
-            <div> 
-                <button class="nav-button">Book Appointment</button>
+
+            <div class="nav-actions"> 
+                <button class="nav-button header-btn">Book Appointment</button>
+                <div class="hamburger-menu" id="menuBtn" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
-</div></body>   
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const navSidebar = document.getElementById('navSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+        if (!navSidebar) return;
+        navSidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+        document.body.style.overflow = navSidebar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', toggleSidebar);
+    if (closeBtn) closeBtn.addEventListener('click', toggleSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
+</script>
+
+</body>
 </html>
